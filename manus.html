@@ -1,0 +1,712 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KRYSTAL KRONA CARE - Your Trusted Healthcare Partner in Lagos, Nigeria">
+    <meta name="keywords" content="hospital, healthcare, cardiology, pediatrics, orthopedics, dermatology">
+    <title>KRYSTAL KRONA CARE - Hospital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="manus.css">
+    
+</head>
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="header-container">
+            <div class="logo">KRYSTAL KRONA CARE</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li class="dropdown">
+                        <a href="#services">Services ▼</a>
+                        <div class="dropdown-menu">
+                            <a href="#" onclick="openServiceModal('Cardiology')">Cardiology</a>
+                            <a href="#" onclick="openServiceModal('Pediatrics')">Pediatrics</a>
+                            <a href="#" onclick="openServiceModal('General Medicine')">General Medicine</a>
+                            <a href="#" onclick="openServiceModal('Orthopedics')">Orthopedics</a>
+                            <a href="#" onclick="openServiceModal('Dermatology')">Dermatology</a>
+                        </div>
+                    </li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li href="login.html"><a href="login.html">Login</a></li>
+                    
+                </ul>
+            </nav>
+            <button class="mobile-toggle" onclick="toggleNav()">☰</button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to KRYSTAL KRONA CARE</h1>
+            <p>Your Trusted Healthcare Partner</p>
+            <p style="font-size: 1rem; opacity: 0.9;">Providing top-notch care in Lagos, Nigeria</p>
+            <button class="cta-button" onclick="document.getElementById('booking-section').scrollIntoView({behavior: 'smooth'})">Book an Appointment</button>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=500&h=400" alt="Hospital exterior" aria-label="Exterior view of KRYSTAL KRONA CARE hospital">
+        </div>
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>KRYSTAL KRONA CARE is a leading healthcare institution dedicated to providing exceptional medical services to the residents of Lagos, Nigeria. With a team of highly qualified doctors and state-of-the-art facilities, we are committed to your health and well-being.</p>
+            <p>Our hospital specializes in multiple medical disciplines, ensuring comprehensive care for all your healthcare needs. We believe in patient-centered care and strive to make every visit a positive experience.</p>
+            <p>Whether you need preventive care, treatment for acute conditions, or specialized medical services, our experienced team is here to help you achieve optimal health.</p>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card" onclick="openServiceModal('Cardiology')">
+                    <h3>❤️ Cardiology</h3>
+                    <p>Specialized heart and cardiovascular disease treatment with advanced diagnostic tools.</p>
+                </div>
+                <div class="service-card" onclick="openServiceModal('Pediatrics')">
+                    <h3>👶 Pediatrics</h3>
+                    <p>Comprehensive healthcare services for infants, children, and adolescents.</p>
+                </div>
+                <div class="service-card" onclick="openServiceModal('General Medicine')">
+                    <h3>🏥 General Medicine</h3>
+                    <p>Primary care and treatment for common medical conditions and illnesses.</p>
+                </div>
+                <div class="service-card" onclick="openServiceModal('Orthopedics')">
+                    <h3>🦴 Orthopedics</h3>
+                    <p>Expert care for bone, joint, and musculoskeletal disorders.</p>
+                </div>
+                <div class="service-card" onclick="openServiceModal('Dermatology')">
+                    <h3>💆 Dermatology</h3>
+                    <p>Specialized treatment for skin conditions and cosmetic dermatology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials" id="testimonials">
+        <h2>What Our Patients Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150" alt="John Doe portrait" aria-label="Portrait of patient John Doe">
+                </div>
+                <div class="testimonial-name">John Doe</div>
+                <div class="stars">★★★★★ (5/5)</div>
+                <div class="testimonial-text">"The care at KRYSTAL KRONA CARE was exceptional. The doctors were professional and attentive, and I recovered faster than expected!"</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&h=150" alt="Jane Smith portrait" aria-label="Portrait of patient Jane Smith">
+                </div>
+                <div class="testimonial-name">Jane Smith</div>
+                <div class="stars">★★★★★ (5/5)</div>
+                <div class="testimonial-text">"Excellent service and very clean facilities. The staff made me feel comfortable throughout my stay. Highly recommended!"</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150" alt="Michael Johnson portrait" aria-label="Portrait of patient Michael Johnson">
+                </div>
+                <div class="testimonial-name">Michael Johnson</div>
+                <div class="stars">★★★★★ (5/5)</div>
+                <div class="testimonial-text">"Professional doctors, modern equipment, and friendly nurses. My family and I have been patients here for years!"</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150" alt="Sarah Williams portrait" aria-label="Portrait of patient Sarah Williams">
+                </div>
+                <div class="testimonial-name">Sarah Williams</div>
+                <div class="stars">★★★★★ (5/5)</div>
+                <div class="testimonial-text">"I was nervous about my surgery, but the team at KRYSTAL KRONA CARE put me at ease. Thank you for the excellent care!"</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150" alt="David Brown portrait" aria-label="Portrait of patient David Brown">
+                </div>
+                <div class="testimonial-name">David Brown</div>
+                <div class="stars">★★★★★ (5/5)</div>
+                <div class="testimonial-text">"Outstanding medical expertise and compassionate care. The follow-up support was also impressive. Truly a world-class facility!"</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>Have questions? We're here to help. Contact us today!</p>
+                <a href="tel:+2347039744486" class="contact-phone" aria-label="Call hospital at +2347039744486">📞 +234-703-974-4486</a>
+                <p style="margin-top: 1.5rem;">Our team is available Monday to Friday, 8:00 AM to 6:00 PM.</p>
+            </div>
+            <form class="contact-form" onsubmit="handleContactForm(event)">
+                <div class="form-group">
+                    <label for="contact-name">Name</label>
+                    <input type="text" id="contact-name" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email</label>
+                    <input type="email" id="contact-email" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" required aria-required="true"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER SECTION -->
+    <section class="newsletter">
+        <div class="newsletter-container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with the latest health tips and hospital news.</p>
+            <form class="newsletter-form" onsubmit="handleNewsletterSignup(event)">
+                <input type="email" id="newsletter-email" placeholder="Enter your email" required aria-required="true">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- PATIENT REPORT & BOOKING SECTION -->
+    <section class="booking-section" id="booking-section">
+        <h2>Book an Appointment</h2>
+        <form class="booking-form" id="booking-form" onsubmit="handleBookingForm(event)">
+            <div class="form-group">
+                <label for="patient-name">Full Name</label>
+                <input type="text" id="patient-name" required aria-required="true">
+            </div>
+            <div class="form-group">
+                <label for="patient-age">Age</label>
+                <input type="number" id="patient-age" required aria-required="true" min="0">
+            </div>
+            <div class="form-group">
+                <label for="patient-contact">Contact Number</label>
+                <input type="tel" id="patient-contact" required aria-required="true">
+            </div>
+            <div class="form-group">
+                <label for="patient-email">Email</label>
+                <input type="email" id="patient-email" required aria-required="true">
+            </div>
+            <div class="form-group">
+                <label for="patient-symptoms">Describe Your Symptoms</label>
+                <textarea id="patient-symptoms" required aria-required="true"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="specialization">Select Specialization</label>
+                <select id="specialization" required aria-required="true">
+                    <option value="">-- Select Specialization --</option>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Pediatrics">Pediatrics</option>
+                    <option value="General Medicine">General Medicine</option>
+                    <option value="Orthopedics">Orthopedics</option>
+                    <option value="Dermatology">Dermatology</option>
+                </select>
+            </div>
+            <div class="booking-actions">
+                <button type="button" class="check-availability-btn" onclick="checkAvailability()">Check Availability</button>
+                <button type="submit" class="book-appointment-btn">Book Appointment</button>
+            </div>
+        </form>
+        <div id="doctors-list" class="doctors-list"></div>
+    </section>
+
+    <!-- LOGIN SECTION -->
+    <section class="login-section" id="login-section">
+        <h2>Admin Portal</h2>
+        <p>Access the admin dashboard to manage appointments and view patient reports.</p>
+       <a href="admin-dashboard.html"> <button class="login-button" onclick="openLoginModal()">Login to Dashboard</button>  </a>
+       
+    </section>
+
+    <!-- ADMIN DASHBOARD -->
+    <section class="admin-dashboard" id="admin-dashboard">
+        <div class="admin-header">
+            <h2>Admin Dashboard</h2>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+        <div class="admin-tabs">
+            <button class="admin-tab active" onclick="switchAdminTab('reports')">Patient Reports</button>
+            <button class="admin-tab" onclick="switchAdminTab('appointments')">Appointments</button>
+            <button class="admin-tab" onclick="switchAdminTab('analytics')">Analytics</button>
+        </div>
+        <div id="reports-tab" class="admin-content active">
+            <h3>Patient Reports</h3>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Age</th>
+                        <th>Contact</th>
+                        <th>Symptoms</th>
+                        <th>Specialization</th>
+                    </tr>
+                </thead>
+                <tbody id="reports-tbody">
+                </tbody>
+            </table>
+        </div>
+        <div id="appointments-tab" class="admin-content">
+            <h3>Appointments</h3>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Doctor</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="appointments-tbody">
+                </tbody>
+            </table>
+        </div>
+        <div id="analytics-tab" class="admin-content">
+            <h3>Analytics Overview</h3>
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <div class="analytics-number" id="total-signups">0</div>
+                    <div class="analytics-label">Newsletter Signups</div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-number" id="total-enquiries">0</div>
+                    <div class="analytics-label">Service Enquiries</div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-number" id="total-bookings">0</div>
+                    <div class="analytics-label">Appointments Booked</div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-number" id="total-contacts">0</div>
+                    <div class="analytics-label">Contact Messages</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE MODAL -->
+    <div id="service-modal" class="modal">
+        <div class="modal-content service-modal-content">
+            <span class="close-btn" onclick="closeServiceModal()">&times;</span>
+            <h2 id="service-title"></h2>
+            <div class="service-description" id="service-description"></div>
+            <form class="enquiry-form" onsubmit="handleServiceEnquiry(event)">
+                <div class="form-group">
+                    <label for="enquiry-name">Name</label>
+                    <input type="text" id="enquiry-name" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-email">Email</label>
+                    <input type="email" id="enquiry-email" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="enquiry-message">Message</label>
+                    <textarea id="enquiry-message" required aria-required="true"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Enquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- LOGIN MODAL -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeLoginModal()">&times;</span>
+            <h2>Admin Login</h2>
+            <div class="google-form-container">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeExampleFormIDHere/viewform?embedded=true" title="Admin Login Google Form" aria-label="Embedded Google Form for admin login"></iframe>
+            </div>
+            <button class="submit-btn" onclick="simulateGoogleFormSubmit()">Simulate Successful Login</button>
+        </div>
+    </div>
+
+    <!-- APPOINTMENT BOOKING MODAL -->
+    <div id="appointment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeAppointmentModal()">&times;</span>
+            <h2>Confirm Appointment</h2>
+            <form onsubmit="handleAppointmentConfirm(event)">
+                <div class="form-group">
+                    <label for="appointment-date">Select Date</label>
+                    <input type="date" id="appointment-date" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="appointment-time">Select Time</label>
+                    <select id="appointment-time" required aria-required="true">
+                        <option value="">-- Select Time --</option>
+                        <option value="09:00 AM">09:00 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="02:00 PM">02:00 PM</option>
+                        <option value="03:00 PM">03:00 PM</option>
+                        <option value="04:00 PM">04:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-doctor">Select Doctor</label>
+                    <select id="appointment-doctor" required aria-required="true">
+                        <option value="">-- Select Doctor --</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SUCCESS MESSAGE -->
+    <div id="success-message" class="success-message"></div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 KRYSTAL KRONA CARE. All rights reserved.</p>
+        <p>Providing quality healthcare in Lagos, Nigeria.</p>
+    </footer>
+
+    <script>
+        // ===== DATA STORAGE & INITIALIZATION =====
+        const doctors = [
+            { id: 1, name: 'Dr. Adekunle Okafor', specialty: 'Cardiology', availability: ['09:00 AM', '10:00 AM', '11:00 AM'] },
+            { id: 2, name: 'Dr. Chioma Nwosu', specialty: 'Pediatrics', availability: ['02:00 PM', '03:00 PM', '04:00 PM'] },
+            { id: 3, name: 'Dr. Emeka Ijeoma', specialty: 'General Medicine', availability: ['09:00 AM', '02:00 PM', '03:00 PM'] },
+            { id: 4, name: 'Dr. Fatima Hassan', specialty: 'Orthopedics', availability: ['10:00 AM', '11:00 AM', '04:00 PM'] },
+            { id: 5, name: 'Dr. Grace Adeyemi', specialty: 'Dermatology', availability: ['09:00 AM', '03:00 PM', '04:00 PM'] }
+        ];
+
+        const serviceDescriptions = {
+            'Cardiology': 'Our cardiology department specializes in the diagnosis and treatment of heart and cardiovascular diseases. We use advanced diagnostic tools and provide comprehensive care for patients with various cardiac conditions.',
+            'Pediatrics': 'We provide comprehensive healthcare services for infants, children, and adolescents. Our pediatricians are experienced in treating common childhood illnesses and developmental concerns.',
+            'General Medicine': 'Our general medicine department provides primary care and treatment for common medical conditions. We focus on preventive care and health maintenance.',
+            'Orthopedics': 'We specialize in the diagnosis and treatment of bone, joint, and musculoskeletal disorders. Our orthopedic surgeons are experienced in both surgical and non-surgical treatments.',
+            'Dermatology': 'Our dermatology department offers specialized treatment for various skin conditions and cosmetic dermatology services. We use the latest techniques and equipment for optimal results.'
+        };
+
+        // Initialize local storage
+        function initializeStorage() {
+            if (!localStorage.getItem('patientReports')) localStorage.setItem('patientReports', JSON.stringify([]));
+            if (!localStorage.getItem('appointments')) localStorage.setItem('appointments', JSON.stringify([]));
+            if (!localStorage.getItem('newsletterSignups')) localStorage.setItem('newsletterSignups', JSON.stringify([]));
+            if (!localStorage.getItem('serviceEnquiries')) localStorage.setItem('serviceEnquiries', JSON.stringify([]));
+            if (!localStorage.getItem('contactMessages')) localStorage.setItem('contactMessages', JSON.stringify([]));
+        }
+
+        // Show success message
+        function showSuccessMessage(message) {
+            const successMsg = document.getElementById('success-message');
+            successMsg.textContent = message;
+            successMsg.classList.add('show');
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 3000);
+        }
+
+        // ===== SERVICE MODAL FUNCTIONS =====
+        function openServiceModal(service) {
+            document.getElementById('service-title').textContent = service;
+            document.getElementById('service-description').textContent = serviceDescriptions[service];
+            document.getElementById('service-modal').style.display = 'block';
+        }
+
+        function closeServiceModal() {
+            document.getElementById('service-modal').style.display = 'none';
+        }
+
+        function handleServiceEnquiry(event) {
+            event.preventDefault();
+            const form = event.target;
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            const name = document.getElementById('enquiry-name').value;
+            const email = document.getElementById('enquiry-email').value;
+            const message = document.getElementById('enquiry-message').value;
+            
+            const enquiries = JSON.parse(localStorage.getItem('serviceEnquiries'));
+            enquiries.push({ name, email, message, date: new Date().toLocaleString() });
+            localStorage.setItem('serviceEnquiries', JSON.stringify(enquiries));
+            
+            showSuccessMessage('Enquiry sent successfully! We will contact you soon.');
+            event.target.reset();
+            closeServiceModal();
+        }
+
+        // ===== LOGIN MODAL FUNCTIONS =====
+        function openLoginModal() {
+            document.getElementById('login-modal').style.display = 'block';
+        }
+
+        function closeLoginModal() {
+            document.getElementById('login-modal').style.display = 'none';
+        }
+
+        function simulateGoogleFormSubmit() {
+            // Simulate successful login after form submission (since iframe doesn't notify JS directly)
+            localStorage.setItem('adminLoggedIn', 'true');
+            closeLoginModal();
+            showAdminDashboard();
+            showSuccessMessage('Login successful!');
+        }
+
+        function logout() {
+            localStorage.removeItem('adminLoggedIn');
+            document.getElementById('admin-dashboard').classList.remove('active');
+            document.getElementById('login-section').style.display = 'block';
+            showSuccessMessage('Logged out successfully!');
+        }
+
+        function showAdminDashboard() {
+            document.getElementById('admin-dashboard').classList.add('active');
+            document.getElementById('login-section').style.display = 'none';
+            loadPatientReports();
+            loadAppointments();
+            loadAnalytics();
+        }
+
+        // ===== ADMIN DASHBOARD FUNCTIONS =====
+        function switchAdminTab(tab) {
+            document.querySelectorAll('.admin-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.admin-tab').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById(tab + '-tab').classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        function loadPatientReports() {
+            const reports = JSON.parse(localStorage.getItem('patientReports'));
+            const tbody = document.getElementById('reports-tbody');
+            tbody.innerHTML = '';
+            
+            reports.forEach(report => {
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${report.name}</td>
+                    <td>${report.age}</td>
+                    <td>${report.contact}</td>
+                    <td>${report.symptoms.substring(0, 50)}...</td>
+                    <td>${report.specialization}</td>
+                `;
+            });
+            
+            if (reports.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 2rem;">No patient reports yet.</td></tr>';
+            }
+        }
+
+        function loadAppointments() {
+            const appointments = JSON.parse(localStorage.getItem('appointments'));
+            const tbody = document.getElementById('appointments-tbody');
+            tbody.innerHTML = '';
+            
+            appointments.forEach(apt => {
+                const row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${apt.patientName}</td>
+                    <td>${apt.doctor}</td>
+                    <td>${apt.date}</td>
+                    <td>${apt.time}</td>
+                    <td><span style="background: #4caf50; color: white; padding: 0.25rem 0.75rem; border-radius: 4px;">Confirmed</span></td>
+                `;
+            });
+            
+            if (appointments.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 2rem;">No appointments yet.</td></tr>';
+            }
+        }
+
+        function loadAnalytics() {
+            const signups = JSON.parse(localStorage.getItem('newsletterSignups')).length;
+            const enquiries = JSON.parse(localStorage.getItem('serviceEnquiries')).length;
+            const bookings = JSON.parse(localStorage.getItem('appointments')).length;
+            const contacts = JSON.parse(localStorage.getItem('contactMessages')).length;
+            
+            document.getElementById('total-signups').textContent = signups;
+            document.getElementById('total-enquiries').textContent = enquiries;
+            document.getElementById('total-bookings').textContent = bookings;
+            document.getElementById('total-contacts').textContent = contacts;
+        }
+
+        // ===== CONTACT FORM FUNCTIONS =====
+        function handleContactForm(event) {
+            event.preventDefault();
+            const form = event.target;
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('contact-message').value;
+            
+            const contacts = JSON.parse(localStorage.getItem('contactMessages'));
+            contacts.push({ name, email, message, date: new Date().toLocaleString() });
+            localStorage.setItem('contactMessages', JSON.stringify(contacts));
+            
+            showSuccessMessage('Message sent successfully! We will contact you soon.');
+            event.target.reset();
+        }
+
+        // ===== NEWSLETTER FUNCTIONS =====
+        function handleNewsletterSignup(event) {
+            event.preventDefault();
+            const form = event.target;
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            const email = document.getElementById('newsletter-email').value;
+            
+            const signups = JSON.parse(localStorage.getItem('newsletterSignups'));
+            if (!signups.find(s => s.email === email)) {
+                signups.push({ email, date: new Date().toLocaleString() });
+                localStorage.setItem('newsletterSignups', JSON.stringify(signups));
+                showSuccessMessage('Successfully subscribed to our newsletter!');
+                console.log('Simulated sending update: Welcome email sent to ' + email);
+            } else {
+                showSuccessMessage('This email is already subscribed.');
+            }
+            event.target.reset();
+        }
+
+        // ===== BOOKING FORM FUNCTIONS =====
+        function handleBookingForm(event) {
+            event.preventDefault();
+            const form = event.target;
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            const name = document.getElementById('patient-name').value;
+            const age = document.getElementById('patient-age').value;
+            const contact = document.getElementById('patient-contact').value;
+            const email = document.getElementById('patient-email').value;
+            const symptoms = document.getElementById('patient-symptoms').value;
+            const specialization = document.getElementById('specialization').value;
+            
+            const reports = JSON.parse(localStorage.getItem('patientReports'));
+            reports.push({ name, age, contact, email, symptoms, specialization, date: new Date().toLocaleString() });
+            localStorage.setItem('patientReports', JSON.stringify(reports));
+            
+            showSuccessMessage('Appointment request submitted! Please select date and time.');
+            openAppointmentModal();
+        }
+
+        function checkAvailability() {
+            const specialization = document.getElementById('specialization').value;
+            if (!specialization) {
+                alert('Please select a specialization first.');
+                return;
+            }
+            
+            const availableDoctors = doctors.filter(d => d.specialty === specialization);
+            const doctorsList = document.getElementById('doctors-list');
+            doctorsList.innerHTML = '';
+            
+            availableDoctors.forEach(doctor => {
+                const card = document.createElement('div');
+                card.className = 'doctor-card';
+                card.innerHTML = `
+                    <div class="doctor-name">${doctor.name}</div>
+                    <div class="doctor-specialty">${doctor.specialty}</div>
+                    <div class="doctor-availability">Available: ${doctor.availability.join(', ')}</div>
+                `;
+                doctorsList.appendChild(card);
+            });
+            
+            if (availableDoctors.length === 0) {
+                doctorsList.innerHTML = '<p style="text-align: center; color: #999;">No doctors available for this specialization.</p>';
+            }
+        }
+
+        function openAppointmentModal() {
+            const specialization = document.getElementById('specialization').value;
+            const availableDoctors = doctors.filter(d => d.specialty === specialization);
+            const doctorSelect = document.getElementById('appointment-doctor');
+            doctorSelect.innerHTML = '<option value="">-- Select Doctor --</option>';
+            
+            availableDoctors.forEach(doctor => {
+                const option = document.createElement('option');
+                option.value = doctor.name;
+                option.textContent = doctor.name;
+                doctorSelect.appendChild(option);
+            });
+            
+            document.getElementById('appointment-modal').style.display = 'block';
+        }
+
+        function closeAppointmentModal() {
+            document.getElementById('appointment-modal').style.display = 'none';
+        }
+
+        function handleAppointmentConfirm(event) {
+            event.preventDefault();
+            const form = event.target;
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            const patientName = document.getElementById('patient-name').value;
+            const date = document.getElementById('appointment-date').value;
+            const time = document.getElementById('appointment-time').value;
+            const doctor = document.getElementById('appointment-doctor').value;
+            
+            const appointments = JSON.parse(localStorage.getItem('appointments'));
+            appointments.push({ patientName, doctor, date, time, status: 'Confirmed' });
+            localStorage.setItem('appointments', JSON.stringify(appointments));
+            
+            showSuccessMessage(`Appointment booked for ${date} at ${time} with ${doctor}`);
+            closeAppointmentModal();
+            document.getElementById('booking-form').reset();
+            document.getElementById('doctors-list').innerHTML = '';
+        }
+
+        // ===== MODAL CLOSE ON OUTSIDE CLICK =====
+        window.onclick = function(event) {
+            const serviceModal = document.getElementById('service-modal');
+            const loginModal = document.getElementById('login-modal');
+            const appointmentModal = document.getElementById('appointment-modal');
+            
+            if (event.target === serviceModal) serviceModal.style.display = 'none';
+            if (event.target === loginModal) loginModal.style.display = 'none';
+            if (event.target === appointmentModal) appointmentModal.style.display = 'none';
+        }
+
+        // ===== MOBILE NAVIGATION =====
+        function toggleNav() {
+            const nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // ===== CHECK LOGIN STATUS ON PAGE LOAD =====
+        window.addEventListener('load', function() {
+            initializeStorage();
+            if (localStorage.getItem('adminLoggedIn') === 'true') {
+                showAdminDashboard();
+            }
+        });
+
+        // ===== SET MINIMUM DATE FOR APPOINTMENT =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('appointment-date');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.min = today;
+            }
+        });
+    </script>
+    
+</body>
+</html>
+```

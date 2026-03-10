@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - KRYSTAL KRONA CARE</title>
+    <link rel="stylesheet" href="admin-dashboard-styles.css">
+</head>
+<body class="admin-dashboard-body">
+
+    <!-- Top Navigation Bar -->
+    <nav class="admin-navbar">
+        <div class="admin-nav-container">
+            <div class="admin-logo">
+                <img src="https://placehold.co/100x100/png?text=KKC+Logo&font=playfair+display&bg=0066cc&textColor=FFFFFF" alt="KRYSTAL KRONA CARE">
+                <span class="admin-logo-text">KRYSTAL KRONA CARE</span>
+            </div>
+
+            <div class="admin-user-info">
+                <span class="admin-username">👤 <span id="adminName">Admin</span></span>
+                <button class="btn-admin-logout" id="logoutBtn">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M6.5 16H3.5C2.96957 16 2.46086 15.7893 2.08579 15.4142C1.71071 15.0391 1.5 14.5304 1.5 14V4C1.5 3.46957 1.71071 2.96086 2.08579 2.58579C2.46086 2.21071 2.96957 2 3.5 2H6.5M12.5 13L16.5 9M16.5 9L12.5 5M16.5 9H6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="admin-main-container">
+        
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-menu">
+                <a href="#dashboard" class="admin-menu-item active" data-section="dashboard">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M2.5 7.5L10 2.5L17.5 7.5V16.25C17.5 16.5815 17.3683 16.8995 17.1339 17.1339C16.8995 17.3683 16.5815 17.5 16.25 17.5H3.75C3.41848 17.5 3.10054 17.3683 2.86612 17.1339C2.6317 16.8995 2.5 16.5815 2.5 16.25V7.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="#patients" class="admin-menu-item" data-section="patients">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M14.1667 17.5V15.8333C14.1667 14.9493 13.8155 14.1014 13.1904 13.4763C12.5652 12.8512 11.7174 12.5 10.8333 12.5H4.16667C3.28261 12.5 2.43477 12.8512 1.80964 13.4763C1.18452 14.1014 0.833333 14.9493 0.833333 15.8333V17.5M19.1667 17.5V15.8333C19.1662 15.0948 18.9204 14.3773 18.4679 13.7936C18.0154 13.2099 17.3819 12.793 16.6667 12.6083M13.3333 2.60833C14.0503 2.79192 14.6858 3.20892 15.1396 3.79359C15.5935 4.37827 15.8398 5.09736 15.8398 5.8375C15.8398 6.57764 15.5935 7.29673 15.1396 7.88141C14.6858 8.46608 14.0503 8.88308 13.3333 9.06667M10.8333 2.60833C11.5503 2.79192 12.1858 3.20892 12.6396 3.79359C13.0935 4.37827 13.3398 5.09736 13.3398 5.8375C13.3398 6.57764 13.0935 7.29673 12.6396 7.88141C12.1858 8.46608 11.5503 8.88308 10.8333 9.06667M7.5 2.5C8.21704 2.68359 8.85251 3.10059 9.30635 3.68526C9.7602 4.26994 10.0065 4.98903 10.0065 5.72917C10.0065 6.46931 9.7602 7.1884 9.30635 7.77307C8.85251 8.35775 8.21704 8.77475 7.5 8.95833" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Patients</span>
+                </a>
+
+                <a href="#appointments" class="admin-menu-item" data-section="appointments">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4.16667 2.5V5.83333M15.8333 2.5V5.83333M2.5 9.16667H17.5M3.75 3.75H16.25C17.0784 3.75 17.75 4.42157 17.75 5.25V16.25C17.75 17.0784 17.0784 17.75 16.25 17.75H3.75C2.92157 17.75 2.25 17.0784 2.25 16.25V5.25C2.25 4.42157 2.92157 3.75 3.75 3.75Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Appointments</span>
+                </a>
+
+                <a href="#reports" class="admin-menu-item" data-section="reports">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 2.5V17.5M5 2.5V17.5M15 2.5V17.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Reports</span>
+                </a>
+
+                <a href="#settings" class="admin-menu-item" data-section="settings">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10 17.5C13.866 17.5 17.5 13.866 17.5 10C17.5 6.13401 13.866 2.5 10 2.5C6.13401 2.5 2.5 6.13401 2.5 10C2.5 13.866 6.13401 17.5 10 17.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="admin-content">
+            
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="admin-section active">
+                <div class="admin-section-header">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back! Here's what's happening today.</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #e3f2fd;">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="#0066cc">
+                                <path d="M4 24V10C4 8.89543 4.89543 8 6 8H26C27.1046 8 28 8.89543 28 10V24C28 25.1046 27.1046 26 26 26H6C4.89543 26 4 25.1046 4 24Z" fill="currentColor" opacity="0.2"/>
+                                <path d="M12 16L16 20L24 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <p class="stat-label">Total Patients</p>
+                            <h3 class="stat-value" id="totalPatients">0</h3>
+                            <span class="stat-change positive">+5% from last week</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #fff3e0;">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="#ff9800">
+                                <path d="M4 24V10C4 8.89543 4.89543 8 6 8H26C27.1046 8 28 8.89543 28 10V24C28 25.1046 27.1046 26 26 26H6C4.89543 26 4 25.1046 4 24Z" fill="currentColor" opacity="0.2"/>
+                                <path d="M12 16L16 20L24 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <p class="stat-label">Appointments Today</p>
+                            <h3 class="stat-value" id="appointmentsToday">0</h3>
+                            <span class="stat-change positive">+3 from yesterday</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #e8f5e9;">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="#4caf50">
+                                <path d="M4 24V10C4 8.89543 4.89543 8 6 8H26C27.1046 8 28 8.89543 28 10V24C28 25.1046 27.1046 26 26 26H6C4.89543 26 4 25.1046 4 24Z" fill="currentColor" opacity="0.2"/>
+                                <path d="M12 16L16 20L24 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <p class="stat-label">Available Doctors</p>
+                            <h3 class="stat-value" id="availableDoctors">5</h3>
+                            <span class="stat-change neutral">No change</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: #e3f2fd;">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="#2196f3">
+                                <path d="M4 24V10C4 8.89543 4.89543 8 6 8H26C27.1046 8 28 8.89543 28 10V24C28 25.1046 27.1046 26 26 26H6C4.89543 26 4 25.1046 4 24Z" fill="currentColor" opacity="0.2"/>
+                                <path d="M12 16L16 20L24 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <p class="stat-label">New Enquiries</p>
+                            <h3 class="stat-value" id="newEnquiries">0</h3>
+                            <span class="stat-change positive">+2 from last week</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="charts-row">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Appointment Trends</h3>
+                            <select class="period-select">
+                                <option value="7">Last 7 days</option>
+                                <option value="30" selected>Last 30 days</option>
+                                <option value="90">Last 90 days</option>
+                            </select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="appointmentChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Top Specializations</h3>
+                        </div>
+                        <div id="topSpecializationsList" class="top-products-list">
+                            <!-- Will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Appointments -->
+                <div class="recent-orders-card">
+                    <div class="card-header">
+                        <h3>Recent Appointments</h3>
+                        <a href="#appointments" class="view-all-link">View All →</a>
+                    </div>
+                    <div id="recentAppointmentsTable" class="orders-table">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Patients Section -->
+            <section id="patients-section" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Patient Management</h1>
+                    <p>View and manage patient records</p>
+                </div>
+
+                <div class="patients-stats-row">
+                    <div class="patient-stat">
+                        <h4 id="patientsTotalCount">0</h4>
+                        <p>Total Patients</p>
+                    </div>
+                    <div class="patient-stat">
+                        <h4 id="patientsNewCount">0</h4>
+                        <p>New This Week</p>
+                    </div>
+                    <div class="patient-stat">
+                        <h4 id="patientsReturningPercent">0%</h4>
+                        <p>Return Rate</p>
+                    </div>
+                </div>
+
+                <div id="patientsTable" class="data-table">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Appointments Section -->
+            <section id="appointments-section" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Appointment Management</h1>
+                    <p>View and manage all appointments</p>
+                </div>
+
+                <div class="appointments-filter">
+                    <button class="filter-btn active" data-status="all">All Appointments</button>
+                    <button class="filter-btn" data-status="pending">Pending</button>
+                    <button class="filter-btn" data-status="confirmed">Confirmed</button>
+                    <button class="filter-btn" data-status="completed">Completed</button>
+                    <button class="filter-btn" data-status="cancelled">Cancelled</button>
+                </div>
+
+                <div id="allAppointmentsTable" class="data-table">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Reports Section -->
+            <section id="reports-section" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Reports & Analytics</h1>
+                    <p>Generate and view hospital reports</p>
+                </div>
+
+                <div class="reports-grid">
+                    <div class="report-card">
+                        <h3>Patient Reports</h3>
+                        <p>View detailed patient history and reports</p>
+                        <button class="btn-primary">Generate Report</button>
+                    </div>
+                    <div class="report-card">
+                        <h3>Appointment Reports</h3>
+                        <p>Analyze appointment trends and statistics</p>
+                        <button class="btn-primary">Generate Report</button>
+                    </div>
+                    <div class="report-card">
+                        <h3>Doctor Performance</h3>
+                        <p>Evaluate doctor performance metrics</p>
+                        <button class="btn-primary">Generate Report</button>
+                    </div>
+                    <div class="report-card">
+                        <h3>Financial Reports</h3>
+                        <p>View hospital financial summaries</p>
+                        <button class="btn-primary">Generate Report</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings-section" class="admin-section">
+                <div class="admin-section-header">
+                    <h1>Admin Settings</h1>
+                    <p>Manage hospital and admin settings</p>
+                </div>
+
+                <div class="settings-form">
+                    <div class="form-group">
+                        <label>Hospital Name</label>
+                        <input type="text" value="KRYSTAL KRONA CARE" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="tel" value="+2347039744486">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" value="admin@krystalkrona.com">
+                    </div>
+                    <button class="btn-primary">Save Changes</button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="admin-dashboard.js"> </script>
+        
+
+</body>
+</html>

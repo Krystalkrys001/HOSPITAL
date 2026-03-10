@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register - Crown Chemical</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="auth-styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="manus.css">
+</head>
+<body class="theme_bumpa-container" style="--primary-color:#001821;">
+
+ <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="header-container">
+            <div class="logo">KRYSTAL KRONA CARE</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li class="dropdown">
+                        <a href="#services">Services ▼</a>
+                        <div class="dropdown-menu">
+                            <a href="#" onclick="openServiceModal('Cardiology')">Cardiology</a>
+                            <a href="#" onclick="openServiceModal('Pediatrics')">Pediatrics</a>
+                            <a href="#" onclick="openServiceModal('General Medicine')">General Medicine</a>
+                            <a href="#" onclick="openServiceModal('Orthopedics')">Orthopedics</a>
+                            <a href="#" onclick="openServiceModal('Dermatology')">Dermatology</a>
+                        </div>
+                    </li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                
+                    
+                </ul>
+            </nav>
+            <button class="mobile-toggle" onclick="toggleNav()">☰</button>
+        </div>
+    </header>
+
+    <div class="base-layout-page-content">
+        <main class="auth-page">
+            <div class="auth-container">
+                
+                <!-- Tab Navigation -->
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">Login</button>
+                    <button class="tab-btn" data-tab="register">Create Account</button>
+                </div>
+
+                <!-- Login Tab -->
+                <div id="login-tab" class="tab-content active">
+                    <form id="login-form" class="auth-form">
+                        <h2 class="form-title">Welcome Back!</h2>
+                        <p class="form-subtitle">Login to access your account</p>
+
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" name="email" placeholder="your@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" name="password" placeholder="Enter your password" required>
+                        </div>
+
+                        <div class="form-row">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="rememberMe">
+                                <span>Remember me</span>
+                            </label>
+                            <a href="#forgot-password" class="link forgot-password-link">Forgot Password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Login</button>
+
+                        <div class="divider">
+                            <span>OR</span>
+                        </div>
+
+                        <!-- <button type="button" class="btn btn-google">
+                            
+                             <svg width="18" height="18" viewBox="0 0 18 18">
+                                <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z"/>
+                                <path fill="#34A853" d="M9.003 18c2.43 0 4.467-.806 5.956-2.184L12.05 13.56c-.806.54-1.836.86-3.047.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9.003 18z"/>
+                                <path fill="#FBBC05" d="M3.964 10.71c-.18-.54-.282-1.117-.282-1.71s.102-1.17.282-1.71V4.958H.957C.347 6.173 0 7.55 0 9s.348 2.827.957 4.042l3.007-2.332z"/>
+                                <path fill="#EA4335" d="M9.003 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.464.891 11.426 0 9.003 0 5.482 0 2.438 2.017.957 4.958L3.964 7.29c.708-2.127 2.692-3.71 5.036-3.71z"/>
+                            </svg>
+                            Continue with Google
+                        </button> -->
+                           
+                        
+
+                        <div class="form-footer">
+                            <p>Don't have an account? <a href="#" class="link" data-tab="register">Create Account</a></p>
+                            <p><a href="index.html" class="link guest-checkout-link">Continue as Guest</a></p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Register Tab -->
+                <div id="register-tab" class="tab-content">
+                    <form id="register-form" class="auth-form">
+                        <h2 class="form-title">Create Account</h2>
+                        <p class="form-subtitle">Join KRYSTAL KRONA CARE today</p>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name *</label>
+                                <input type="text" name="fullName" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number *</label>
+                                <input type="tel" name="phone" placeholder="08012345678" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email Address *</label>
+                            <input type="email" name="email" placeholder="your@email.com" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Password *</label>
+                                <input type="password" name="password" placeholder="Min. 8 characters" required>
+                                <div class="password-strength-meter" style="display: none;">
+                                    <div class="strength-bar"></div>
+                                    <span class="strength-text"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password *</label>
+                                <input type="password" name="confirmPassword" placeholder="Re-enter password" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Company Name (Optional)</label>
+                            <input type="text" name="companyName" placeholder="Your company name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Business Type *</label>
+                            <select name="businessType" required>
+                                <option value="">Select type...</option>
+                                <option value="individual">Individual</option>
+                                <option value="retailer">Retailer</option>
+                                <option value="hotel">Hotel</option>
+                                <option value="restaurant">Restaurant</option>
+                                <option value="company">Company/Corporation</option>
+                                <option value="government">Government</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Delivery Address (Optional)</label>
+                            <textarea name="address" rows="3" placeholder="Enter your delivery address"></textarea>
+                        </div>
+
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="terms" required>
+                            <span>I agree to the <a href="#" class="link">Terms & Conditions</a></span>
+                        </label>
+
+                        <button type="submit" class="btn btn-primary">Create Account</button>
+
+                        <div class="form-footer">
+                            <p>Already have an account? <a href="#" class="link" data-tab="login">Login</a></p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Password Reset Modal -->
+    <div id="password-reset-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            
+            <!-- Step 1: Enter Email -->
+            <div id="forgot-password-step">
+                <h3>Reset Password</h3>
+                <p>Enter your email address and we'll send you an OTP</p>
+                <form id="forgot-password-form">
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send OTP</button>
+                </form>
+            </div>
+
+            <!-- Step 2: Verify OTP -->
+            <div id="verify-otp-step" style="display: none;">
+                <h3>Enter OTP</h3>
+                <p>We sent a 6-digit code to your email</p>
+                <form id="verify-otp-form">
+                    <div class="form-group">
+                        <input type="text" name="otp" placeholder="Enter 6-digit OTP" maxlength="6" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Verify OTP</button>
+                    <button type="button" class="btn btn-link resend-otp-btn">Resend OTP</button>
+                </form>
+            </div>
+
+            <!-- Step 3: Set New Password -->
+            <div id="new-password-step" style="display: none;">
+                <h3>Set New Password</h3>
+                <p>Choose a strong password</p>
+                <form id="new-password-form">
+                    <div class="form-group">
+                        <label>New Password</label>
+                        <input type="password" name="newPassword" placeholder="Min. 8 characters" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" name="confirmPassword" placeholder="Re-enter password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Reset Password</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+
+              <!-- Social Media Section -->
+
+        
+      
+
+<style>
+.social-media-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: #fff;
+    margin: 40px 0;
+}
+
+.social-media-section h3 {
+    font-size: 28px;
+    color: #0d1821;
+    margin-bottom: 10px;
+}
+
+.social-media-section p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.social-icon.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-icon.facebook {
+    background: #1877F2;
+}
+
+.social-icon.twitter {
+    background: #000;
+}
+
+.social-icon.whatsapp {
+    background: #25D366;
+}
+
+@media (max-width: 600px) {
+    .social-icons {
+        gap: 15px;
+    }
+    
+    .social-icon {
+        width: 48px;
+        height: 48px;
+    }
+}
+</style>
+
+    <!-- WhatsApp Button -->
+    <button class="floating-whatsapp" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0C7.163 0 0 7.163 0 16c0 2.828.736 5.482 2.022 7.78L.697 30.697l7.144-1.88A15.928 15.928 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333c-2.512 0-4.921-.698-7.022-2.022l-.503-.3-5.214 1.368 1.393-5.091-.33-.522A13.267 13.267 0 012.667 16c0-7.364 5.97-13.333 13.333-13.333S29.333 8.636 29.333 16 23.364 29.333 16 29.333z"/>
+            <path d="M23.117 19.508c-.413-.207-2.439-1.204-2.818-1.341-.378-.138-.654-.207-.93.207-.275.413-1.068 1.341-1.31 1.617-.241.275-.482.31-.896.103-2.063-1.034-3.416-1.845-4.778-4.185-.362-.62.362-.575 1.034-1.916.113-.275.057-.516-.03-.723-.087-.207-.93-2.237-1.272-3.064-.334-.806-.673-.697-.93-.71-.24-.013-.516-.013-.792-.013s-.723.103-1.103.516c-.379.413-1.448 1.413-1.448 3.447s1.482 3.998 1.689 4.274c.207.275 2.917 4.453 7.066 6.243.988.426 1.758.68 2.359.871.991.315 1.893.27 2.607.164.795-.12 2.439-.998 2.784-1.963.344-.964.344-1.792.24-1.963-.103-.172-.378-.275-.792-.482z"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="auth-system.js"></script>
+    <script>
+        // Password reset modal handling
+        document.querySelector('.forgot-password-link').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('password-reset-modal').style.display = 'flex';
+        });
+
+        document.querySelector('.modal-close').addEventListener('click', () => {
+            document.getElementById('password-reset-modal').style.display = 'none';
+        });
+
+        // Close modal on outside click
+        document.getElementById('password-reset-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'password-reset-modal') {
+                e.target.style.display = 'none';
+            }
+        });
+    </script>
+    <script src=""></script>
+</body>
+</html>
